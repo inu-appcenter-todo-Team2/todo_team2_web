@@ -23,6 +23,7 @@ const SignupPage = () => {
   };
 
   return (
+  <div className="signup-page">
     <div className="page-layout">
       <div className="svg-container">
         <svg xmlns="http://www.w3.org/2000/svg" width="82" height="81" viewBox="0 0 82 81" fill="none">
@@ -158,6 +159,7 @@ const SignupPage = () => {
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

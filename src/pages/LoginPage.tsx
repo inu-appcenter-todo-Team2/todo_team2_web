@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/LoginPage.css'; // CSS 파일 임포트
 
 const LoginPage: React.FC = () => {
@@ -53,7 +54,7 @@ const LoginPage: React.FC = () => {
           </form>
           
           {/* 회원가입 텍스트 */}
-          <p className="signup-link">회원가입 하러가기</p>
+          <Link to="/signup" className="signup-link">회원가입 하러가기</Link>
         </div>
       </div>
     </div>

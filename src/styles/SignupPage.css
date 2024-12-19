@@ -1,0 +1,144 @@
+.signup-page .page-layout {
+    display: flex;
+    align-items: center; /* 수직 중앙 정렬 */
+    gap: 160px; /* SVG와 로그인 컨테이너 사이 간격 */
+    padding-left: 10px
+  }
+  
+.signup-page .svg-container {
+    display: flex;
+    flex-direction: column; /* 이미지와 텍스트를 세로로 배치 */
+    align-items: center; /* 중앙 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
+    margin-bottom: 10px; /* 텍스트와 이미지 사이 여백 */
+    margin-left: 200px;
+  }
+  
+  .signup-page  .todo-text {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 10px; /* 로고 오른쪽에 텍스트 위치 */
+  }
+  
+  .signup-page .login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  margin-top: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .signup-page .login-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+  }
+  
+  .signup-page .input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  }
+  
+  .signup-page .login-input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+  }
+  
+  .signup-page .birthday-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+  
+  .signup-page .birthday-input-field {
+  width: 30%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  }
+  
+  .signup-page .birthday-input span {
+  margin: 0 5px;
+  }
+  
+  .signup-page .input[type="radio"] {
+  margin-right: 5px;
+  }
+  
+  .signup-page .input[type="radio"]:checked + label {
+  font-weight: bold;
+  }
+  
+  .signup-page .button {
+  width: 100%; /* 부모 컨테이너의 너비에 맞추기 */
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  background: #717171;
+  cursor: pointer;
+  color: #FFF;
+  }
+  
+  .signup-page .button:hover {
+  background-color: #000;
+  }
+  
+  .signup-page .nickname-check-btn, .email-verify-btn {
+  background-color: #ddd;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 5px;
+  cursor: pointer;
+  }
+  
+  .signup-page .nickname-check-btn:hover, .email-verify-btn:hover {
+  background-color: #ccc;
+  }
+  
+  .signup-page .status-message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: red;
+  text-align: center;
+  }
+  
+  .signup-page .login-button{
+    width: 100%; /* 부모 컨테이너의 너비에 맞추기 */
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    background: #717171;
+    cursor: pointer;
+    color: #FFF;
+  }
+
+  .signup-page .signup-link {
+  text-align: center;
+  margin-top: 20px;
+  }
+  
+  .signup-page .signup-link a {
+  color: #000;
+  text-decoration: none;
+  font-family: 'AppleSDGothicNeoH00', sans-serif;
+  font-style: oblique;
+  }
+  
+  .signup-page .signup-link a:hover {
+  text-decoration: underline;
+  }
