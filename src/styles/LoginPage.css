@@ -1,4 +1,4 @@
-.page-layout {
+.login-page .page-layout {
     display: flex;
     align-items: center; /* 수직 중앙 정렬 */
     gap: 0px; /* SVG와 로그인 컨테이너 사이 간격 */
@@ -6,7 +6,7 @@
 }
 
 /* svg-container 스타일 */
-.svg-container {
+.login-page .svg-container {
     display: flex;
     flex-direction: column; /* 이미지와 텍스트를 세로로 배치 */
     align-items: center; /* 중앙 정렬 */
@@ -16,7 +16,7 @@
 }
 
 /* TodoTodo 문구 스타일 */
-.todo-text {
+.login-page .todo-text {
     color: #000;
     font-family: 'AppleSDGothicNeoH00', sans-serif;
     font-size: 24px;
@@ -27,14 +27,14 @@
 }
 
 /* svg 크기 고정 */
-.svg-container svg {
+.login-page .svg-container svg {
     width: 82px;  /* SVG 크기 고정 */
     height: 81px; /* SVG 크기 고정 */
 }
 
 
 
-.login-container {
+.login-page .login-container {
     display: flex;
     flex-direction: column;
     width: 813px;
@@ -49,7 +49,7 @@
     transform: translateX(50px); /* 오른쪽 이동 */
 }
 
-.login-title {
+.login-page .login-title {
     color: #000;
     text-align: center;
     font-family: 'AppleSDGothicNeoH00', sans-serif;
@@ -70,7 +70,7 @@
 
 
 
-.input-container {
+.login-page .input-container {
     display: flex;
     width: 353px;
     height: 48px;
@@ -82,7 +82,7 @@
     box-sizing: border-box;
 }
 
-.login-input {
+.login-page .login-input {
     width: 100%;
     font-size: 16px;
     border: none;
@@ -91,11 +91,11 @@
     color: #000;
 }
 
-.login-input::placeholder {
+.login-page .login-input::placeholder {
     color: #555;
 }
 
-.login-button {
+.login-page .login-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,11 +109,11 @@
     cursor: pointer;
 }
 
-.login-button:hover {
+.login-page .login-button:hover {
     background-color: #000;
 }
 
-.signup-link {
+.login-page .signup-link {
     color: #000;
     text-align: center;
     font-family: 'AppleSDGothicNeoH00', sans-serif;
