@@ -1,0 +1,125 @@
+.page-layout {
+    display: flex;
+    align-items: center; /* 수직 중앙 정렬 */
+    gap: 0px; /* SVG와 로그인 컨테이너 사이 간격 */
+    padding-left: 10px
+}
+
+/* svg-container 스타일 */
+.svg-container {
+    display: flex;
+    flex-direction: column; /* 이미지와 텍스트를 세로로 배치 */
+    align-items: center; /* 중앙 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
+    margin-bottom: 10px; /* 텍스트와 이미지 사이 여백 */
+    margin-left: 200px;
+}
+
+/* TodoTodo 문구 스타일 */
+.todo-text {
+    color: #000;
+    font-family: 'AppleSDGothicNeoH00', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 10px; /* 텍스트와 SVG 이미지 사이 여백 */
+}
+
+/* svg 크기 고정 */
+.svg-container svg {
+    width: 82px;  /* SVG 크기 고정 */
+    height: 81px; /* SVG 크기 고정 */
+}
+
+
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    width: 813px;
+    height: 489px;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    border-radius: 8px;
+    background: #FFF;
+    position: relative;
+    transform: translateX(50px); /* 오른쪽 이동 */
+}
+
+.login-title {
+    color: #000;
+    text-align: center;
+    font-family: 'AppleSDGothicNeoH00', sans-serif;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    width: 106.509px;
+    height: 69px;
+    
+    font-weight: bold;
+    position: absolute; /* 제목을 컨테이너 안에서 위치 조정 */
+    top: 60px; /* 위쪽 여백 */
+    left: 250px; /* 왼쪽 여백 */
+    margin: 10; /* 기본 여백 제거 */
+}
+
+
+
+.input-container {
+    display: flex;
+    width: 353px;
+    height: 48px;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 4px;
+    background: #E2E2E2;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.login-input {
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #000;
+}
+
+.login-input::placeholder {
+    color: #555;
+}
+
+.login-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 353px;
+    height: 48px;
+    border: none;
+    border-radius: 4px;
+    background: #717171;
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #000;
+}
+
+.signup-link {
+    color: #000;
+    text-align: center;
+    font-family: 'AppleSDGothicNeoH00', sans-serif;
+    font-size: 16px;
+    font-style: bold;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: -100px; /* 위쪽 여백 제거로 문구를 더 위로 올림 */
+}
