@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Link 컴포넌트 임포트
 import '../styles/SignupPage.css'; 
 
 const SignupPage = () => {
@@ -155,7 +156,7 @@ const SignupPage = () => {
 
         {/* 로그인하러 가기 */}
         <div className="signup-link">
-          이미 계정이 있으신가요? <a href="/login">로그인 하러 가기</a>
+          이미 계정이 있으신가요? <Link to="/login">로그인 하러 가기</Link>
         </div>
       </div>
     </div>

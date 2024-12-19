@@ -20,9 +20,7 @@
     color: #000;
     font-family: 'AppleSDGothicNeoH00', sans-serif;
     font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    font-weight: bold;
     margin-top: 10px; /* 텍스트와 SVG 이미지 사이 여백 */
 }
 
