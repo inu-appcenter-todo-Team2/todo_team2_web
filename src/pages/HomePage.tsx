@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import settingPic from '../styles/Setting.png'; // 경로에 맞게 import
 import '../styles/HomePage.css';
+import Calendar from 'react-calendar';
+import CustomCalendar from '../components/Calendar';
 
 const Homepage: React.FC = () => {
 
@@ -95,28 +97,8 @@ const Homepage: React.FC = () => {
 
         {/* Calendar */}
             <div className="calendar">
-                    <div className="calendar-header">
-                        <button className="nav-button">{'<'}</button>
-                        <div className="month-year">{year}년 {month}</div>
-                        <button className="nav-button">{'>'}</button>
-                    </div>
-                    <div className="calendar-grid">
-                        <div className="day-names">
-                            <span>일</span>
-                            <span>월</span>
-                            <span>화</span>
-                            <span>수</span>
-                            <span>목</span>
-                            <span>금</span>
-                            <span>토</span>
-                        </div>
-                        {daysInMonth.map((day) => (
-                            <div key={day} className={`calendar-day ${day === 16 ? 'current-day' : ''}`}>
-                                {day}
-                            </div>
-                        ))}
-                    </div>
-                </div>
+              <CustomCalendar />
+              </div>
             </div>
 
       {/* Right Panel */}
