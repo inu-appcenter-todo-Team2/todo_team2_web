@@ -1,21 +1,36 @@
 // homepage.tsx
 import React, { useState } from 'react';
 import settingPic from '../styles/Setting.png'; // 경로에 맞게 import
+import todoicon from "../styles/Union.png"
+import group3 from "../styles/Group-3.png"
+import addicon from "../styles/Add_square.png"
 import '../styles/HomePage.css';
 import Calendar from 'react-calendar';
 import CustomCalendar from '../components/Calendar';
 
 const Homepage: React.FC = () => {
 
-    const [activePage, setActivePage] = useState('홈'); // 기본값 '홈'
-
-    const handleNavClick = (page: string) => {
-     setActivePage(page); // 클릭된 페이지로 상태 업데이트
-    };    
+    const [activePage, setActivePage] = useState('홈'); // 기본값 '홈'   
 
     const year = 2024; // 여기에 year 변수를 정의합니다.
     const month = '12월'; // month 변수도 정의합니다.
     const daysInMonth = Array.from({ length: 31 }, (_, i) => i + 1); // 1부터 31까지의 배열 생성
+
+    // State와 함수 선언
+    const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+    const [todoList, setTodoList] = useState<{ [key: string]: string[] }>({
+      "2024-12-15": ["Example Task 1", "Example Task 2"],
+      "2024-12-16": ["Another Task"],
+    }); // 기본 샘플 데이터
+
+    // 날짜 형식 변환 함수
+    const formatDate = (date: Date): string => date.toISOString().split("T")[0];
+
+    // 네비게이션 클릭 핸들러
+    const handleNavClick = (page: string) => setActivePage(page);
+
+    // 날짜 클릭 이벤트 핸들러
+    const handleDateClick = (date: Date) => setSelectedDate(date);
 
   return (
     <div className="homepage-container">
@@ -100,6 +115,50 @@ const Homepage: React.FC = () => {
               <CustomCalendar />
               </div>
             </div>
+
+      {/* Todo Content */}
+      
+            {/* Todo Content */}
+            <div className="todo-content">
+                <div className="todo-section">
+                    {selectedDate ? (
+                        <div>
+                            <h3>{formatDate(selectedDate)}의 할 일</h3>
+                            <ul>
+                                {todoList[formatDate(selectedDate)]?.length > 0 ? (
+                                    todoList[formatDate(selectedDate)].map((todo, index) => (
+                                        <li key={index}>{todo}</li>
+                                    ))
+                                ) : (
+                                    <li>오늘은 할 일이 없습니다.</li>
+                                )}
+                            </ul>
+                        </div>
+                    ) : (
+                        <div className="todo-lists">
+                            <img src={addicon} alt="plus" className="add-icon"/>
+                            {[...Array(4)].map((_, index) => (
+                                <p key={index}>
+                                    <img
+                                        src={todoicon}
+                                        alt="할 일 아이콘"
+                                        className="todo-pic"
+                                    />
+                                    할 일 목록
+                                    <img
+                                        src={group3}
+                                        alt="장식 아이콘"
+                                        className="group3-icon"
+                                    />
+                                </p>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </div>
+
+
+
 
       {/* Right Panel */}
       <div className="right-panel">
