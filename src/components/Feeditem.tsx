@@ -5,7 +5,7 @@ import '../styles/Feeditem.css'
 
 function Feeditem() {
     return(
-       <div className='feed-items'>
+    <div className='feed-items'>
         <div className='flower'><img src={blueflower} alt="bf" className="flower-pic" /></div>
         <div className='right-items'> 
             <h3>Seorin</h3>
@@ -16,7 +16,7 @@ function Feeditem() {
             </div>
             <img src={''} alt="feedpic" className="feed-pic" />
         </div>
-       </div>
+    </div>
     )
 };
 

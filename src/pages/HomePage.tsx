@@ -11,6 +11,7 @@ import CustomCalendar from '../components/Calendar';
 const Homepage: React.FC = () => {
 
     const [activePage, setActivePage] = useState('홈'); // 기본값 '홈'   
+    const [activeModal, setActiveModal] = useState('기본') // 기본, 메뉴, 수정, 추가
 
     const year = 2024; // 여기에 year 변수를 정의합니다.
     const month = '12월'; // month 변수도 정의합니다.
@@ -149,6 +150,7 @@ const Homepage: React.FC = () => {
                                         src={group3}
                                         alt="장식 아이콘"
                                         className="group3-icon"
+                                        onClick={() => setActiveModal('메뉴')}
                                     />
                                 </p>
                             ))}
@@ -162,20 +164,54 @@ const Homepage: React.FC = () => {
 
       {/* Right Panel */}
       <div className="right-panel">
-        <div className="status-editor">
-          <label>상태 메시지 수정</label>
-          <div className="status-box">
-          <input type="text" placeholder="상태 메시지를 입력해주세요" />
-          </div>
-        </div>
-        <div className="color-picker">
-          <label>색 수정</label>
-          <div className="colors">
-            {['red', 'orange', 'yellow', 'green', 'blue', 'navy', 'purple'].map((color) => (
-              <div key={color} className={`color ${color}`} />
-            ))}
-          </div>
-        </div>
+        {activeModal == '기본' && (
+           <><div className="status-editor">
+            <label>상태 메시지 수정</label>
+            <div className="status-box">
+              <input type="text" placeholder="상태 메시지를 입력해주세요" />
+            </div>
+          </div><div className="color-picker">
+              <label>색 수정</label>
+              <div className="colors">
+                {['red', 'orange', 'yellow', 'green', 'blue', 'navy', 'purple'].map((color) => (
+                  <div key={color} className={`color ${color}`} />
+                ))}
+              </div>
+            </div></>
+        )}
+
+        {activeModal == '메뉴' && (
+           <>
+           <div className='menu-container'>
+            <div className='menu-item'>
+              <img></img>
+              <p>삭제하기</p>
+            </div>
+            <div className='menu-item' onClick={() => setActiveModal('추가')}>
+              <img></img>
+              <p>수정하기</p>
+            </div>
+            <div className='menu-item'>
+              <img></img>
+              <p>공유하기</p>
+            </div>
+           </div>
+           </>
+        )}  
+
+          {activeModal == '추가' && (
+           <>
+           <div className='add-container'>
+            <div className='add-title'>
+              <img></img>
+              <p> 이터널 션샤인 보러가기 </p>
+            </div>
+            <button className='add-button'>추가하기</button>
+           </div>
+           </>
+        )}
+
+
       </div>
     </div>
   );

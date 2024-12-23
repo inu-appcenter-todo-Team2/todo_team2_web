@@ -5,186 +5,189 @@
     flex-direction: row;
     justify-content: flex-start;
     margin-top: 60px; /* 상단바 높이만큼 여백 추가 */
+
+    .header {
+        position: fixed; /* 상단바를 고정 */
+        top: -20px;
+        left: 0;
+        width: 100%;
+        background-color: #FFF;
+        height: 57px; /* 상단바 높이 */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        z-index: 10; /* 다른 요소 위에 표시 */
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-logo{
+        color: #000;
+        font-family: 'AppleSDGothicNeoH00', sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 15px;
+    }
+    
+    .header-pic{
+        margin-right: 30px;
+        margin-top: 15px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    
+    .sidebar {
+        display: inline-flex;
+        height: calc(100vh - 60px); /* 상단바 높이를 제외한 나머지 공간 */
+        padding: 16px 8px;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        flex-shrink: 0;
+        border-right: 1px solid rgba(0, 0, 0, 0.20);
+        background: #FFF;
+        position: relative; /* 사이드바는 고정되지 않음 */
+    }
+    
+    .menu-item {
+        align-self: stretch;
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 400;
+        margin-top: -23px;
+    }
+    
+    .main-content {
+        flex: 1;
+        padding: 20px;
+        overflow: auto;
+        margin-top: 20px; /* 상단바와 겹치지 않도록 마진 추가 */
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    
+    .user-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .profile-picture {
+        width: 50px;
+        height: 50px;
+        background-color: #ddd;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    .user-details .username {
+        font-weight: bold;
+    }
+    .calendar {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    
+    .nav-button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    
+    .month-year {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 10px;
+    }
+    
+    .day-names {
+        display: contents;
+        font-weight: bold;
+    }
+    
+    .calendar-day {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    
+    .current-day {
+        background-color: #ffeb3b; /* 현재 날짜 강조 */
+        font-weight: bold;
+    }
+    
+    
+    .right-panel {
+        width: 20%;
+        background-color: #fafafa;
+        padding: 20px;
+    }
+    
+    .status-editor label,
+    .color-picker label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    
+    .status-editor .status-box {
+        display: flex;
+        height: 43px;
+        padding: 8px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+        border-radius: 8px;
+        background: #EDEDED; /* 배경색 설정 */
+        color: var(--sub-text, #6E6E6E);
+        font-family: AppleSDGothicNeoSB00;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    
+    .status-editor .status-box input {
+        background: transparent; /* 입력창 배경을 투명하게 설정 */
+        border: 2px solid #EDEDED; /* 테두리를 기존 box 색으로 설정 */
+        border-radius: 8px; /* 네모 모양 유지 */
+        outline: none; /* 포커스 시 외곽선 제거 */
+        font-family: AppleSDGothicNeoSB00; /* 기존 폰트 설정 */
+        font-size: 12px; /* 폰트 크기 설정 */
+        color: var(--sub-text, #6E6E6E); /* 텍스트 색상 설정 */
+        padding: 0 10px; /* 좌우 여백 추가 */
+        width: 100%; /* 입력창이 가로로 꽉 차게 */
+    }
+    
 }
 
-.header {
-    position: fixed; /* 상단바를 고정 */
-    top: -20px;
-    left: 0;
-    width: 100%;
-    background-color: #FFF;
-    height: 57px; /* 상단바 높이 */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    z-index: 10; /* 다른 요소 위에 표시 */
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
-.header-logo{
-    color: #000;
-    font-family: 'AppleSDGothicNeoH00', sans-serif;
-    font-weight: bold;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 15px;
-}
-
-.header-pic{
-    margin-right: 30px;
-    margin-top: 15px;
-}
-
-.nav-links {
-    display: none;
-}
-
-
-.sidebar {
-    display: inline-flex;
-    height: calc(100vh - 60px); /* 상단바 높이를 제외한 나머지 공간 */
-    padding: 16px 8px;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    flex-shrink: 0;
-    border-right: 1px solid rgba(0, 0, 0, 0.20);
-    background: #FFF;
-    position: relative; /* 사이드바는 고정되지 않음 */
-}
-
-.menu-item {
-    align-self: stretch;
-    color: #000;
-    text-align: center;
-    font-family: Inter;
-    font-size: 12px;
-    font-weight: 400;
-    margin-top: -23px;
-}
-
-.main-content {
-    flex: 1;
-    padding: 20px;
-    overflow: auto;
-    margin-top: 20px; /* 상단바와 겹치지 않도록 마진 추가 */
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.profile-picture {
-    width: 50px;
-    height: 50px;
-    background-color: #ddd;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.user-details .username {
-    font-weight: bold;
-}
-.calendar {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.nav-button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.month-year {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-}
-
-.day-names {
-    display: contents;
-    font-weight: bold;
-}
-
-.calendar-day {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.current-day {
-    background-color: #ffeb3b; /* 현재 날짜 강조 */
-    font-weight: bold;
-}
-
-
-.right-panel {
-    width: 20%;
-    background-color: #fafafa;
-    padding: 20px;
-}
-
-.status-editor label,
-.color-picker label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.status-editor .status-box {
-    display: flex;
-    height: 43px;
-    padding: 8px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    align-self: stretch;
-    border-radius: 8px;
-    background: #EDEDED; /* 배경색 설정 */
-    color: var(--sub-text, #6E6E6E);
-    font-family: AppleSDGothicNeoSB00;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.status-editor .status-box input {
-    background: transparent; /* 입력창 배경을 투명하게 설정 */
-    border: 2px solid #EDEDED; /* 테두리를 기존 box 색으로 설정 */
-    border-radius: 8px; /* 네모 모양 유지 */
-    outline: none; /* 포커스 시 외곽선 제거 */
-    font-family: AppleSDGothicNeoSB00; /* 기존 폰트 설정 */
-    font-size: 12px; /* 폰트 크기 설정 */
-    color: var(--sub-text, #6E6E6E); /* 텍스트 색상 설정 */
-    padding: 0 10px; /* 좌우 여백 추가 */
-    width: 100%; /* 입력창이 가로로 꽉 차게 */
-}

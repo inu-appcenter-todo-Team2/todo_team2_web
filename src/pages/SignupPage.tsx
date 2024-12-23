@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Link 컴포넌트 임포트
+import { Link, useNavigate } from 'react-router-dom'; // Link 컴포넌트 임포트
 import '../styles/SignupPage.css'; 
+import axios from 'axios';
 
 const SignupPage = () => {
   const [name, setName] = useState('');
@@ -12,11 +13,37 @@ const SignupPage = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [statusMessage, setStatusMessage] = useState('');
   const [isValid, setIsValid] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Submit form logic here
     if (password === confirmPassword) {
+      try {
+        // Swagger에서 확인한 엔드포인트 사용
+        const response = await axios.post('http://3.39.232.214/api/v1/auth/signup', {
+          email,
+          password,
+          username : name,
+          nickname,
+          statusMessage,
+          birth : birthday,
+          gender,
+          personalColor : '#111111'
+        });
+  
+        if (response.status === 200) {
+          alert('회원가입 성공!');
+          navigate('/login'); 
+        }
+      } catch (error: any) {
+        // 에러 처리
+        if (error.response) {
+          alert(error.response.data.message); // 서버에서 온 에러 메시지
+        } else {
+          alert('로그인 요청에 문제가 발생했습니다.');
+        }
+      }
       setStatusMessage("회원가입이 완료되었습니다!");
     } else {
       setStatusMessage("비밀번호가 일치하지 않습니다.");
