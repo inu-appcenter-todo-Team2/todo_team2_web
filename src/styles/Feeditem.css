@@ -1,0 +1,33 @@
+.feed-items{
+    display: flex;
+    gap: 16px;
+    
+}
+
+.right-items{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    h3{
+        margin: 0;
+    }
+    p{
+        margin: 0;
+    }
+}
+
+.input-item{
+    display: flex;
+    gap: 8px;
+}
+
+.todo-pic{
+    width: 22.508px;
+    height: 22.508px;
+    flex-shrink: 0;
+}
+
+.feed-pic{
+    height: 258px;
+    align-self: stretch;
+}

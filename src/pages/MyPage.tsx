@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import '../styles/MyPage.css';
 import settingPic from '../styles/Setting.png'; // 경로에 맞게 import
+import Feeditem from '../components/Feeditem';
 
 const Mypage: React.FC = () => {
 
@@ -83,15 +85,18 @@ const Mypage: React.FC = () => {
             <div className="status-message">상태메시지</div>
           </div>
         </div>
+
+        {/* feed */}
+        <div>
+          <Feeditem />
+          <Feeditem />
+        </div>
+        <div></div>
      </div>
 
-        
-    
-
-
-
-
-
+      
+   
+      
     </div>
     )
 };

@@ -72,6 +72,9 @@
     padding: 20px;
     overflow: auto;
     margin-top: 20px; /* 상단바와 겹치지 않도록 마진 추가 */
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .user-info {
@@ -184,84 +187,4 @@
     color: var(--sub-text, #6E6E6E); /* 텍스트 색상 설정 */
     padding: 0 10px; /* 좌우 여백 추가 */
     width: 100%; /* 입력창이 가로로 꽉 차게 */
-}
-
-.color-picker{
-    margin-top: 20px;
-}
-
-.color-picker .colors {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
-}
-
-.color {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.color.red {
-    background-color: red;
-}
-
-.color.orange {
-    background-color: orange;
-}
-
-.color.yellow {
-    background-color: yellow;
-}
-
-.color.green {
-    background-color: green;
-}
-
-.color.blue {
-    background-color: blue;
-}
-
-.color.navy {
-    background-color: navy;
-}
-
-.color.purple {
-    background-color: purple;
-}
-.todo-content {
-    padding: 50px;
-}
-
-.todo-section {
-    margin-bottom: 20px;
-}
-
-.todo-lists p {
-    display: flex;
-    align-items: center;
-    gap: 11px; /* 이미지와 텍스트 사이 간격 조정 */
-    margin-bottom: 30px; /* 각 항목 간의 간격 */
-    margin-top: 103px;
-}
-
-.todo-pic {
-    width: 37px; /* 이미지 크기 조정 */
-    height: 37px;
-    margin-left: -10px;
-}
-
-.group3-icon {
-    width: 20px; /* 장식 아이콘 크기 조정 */
-    height: 20px;
-}
-
-.add-icon{
-    display: flex;
-    padding: 8px 100px;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
-    align-self: stretch;
 }
